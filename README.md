@@ -1,75 +1,103 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Kool Link ❄️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive landing page for **Kool Link Iceblocks** — built with React and Tailwind CSS.  
+It includes an order form connected to **EmailJS** and a WhatsApp quick-order CTA for fast customer conversions.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- ✅ Fully responsive landing page UI
+- ✅ WhatsApp “Order Now” deep link with pre-filled message
+- ✅ Contact/Order form sends orders directly to email via **EmailJS**
+- ✅ Smooth scroll navigation
+- ✅ Clean, modular React section-based structure
+- ✅ Tailwind CSS styling
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧱 Tech Stack
 
-### `npm test`
+- **React** (CRA)
+- **Tailwind CSS**
+- **EmailJS** (client-side email delivery)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```txt
+src/
+  components/
+  config/
+    contact.js
+  hooks/
+  sections/
+    HeaderHero.jsx
+    About.jsx
+    WhyChooseUs.jsx
+    Products.jsx
+    Delivery.jsx
+    Contact.jsx
+    Footer.jsx
+  App.jsx
+  index.css
+  index.js
+✅ Getting Started
+1) Install Dependencies
+npm install
+2) Add Environment Variables
+Create a .env file in the project root:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+REACT_APP_EMAILJS_SERVICE_ID=your_service_id
+REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
+REACT_APP_EMAILJS_PUBLIC_KEY=your_public_key
+After adding .env, restart your dev server.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3) Run the App
+npm start
+App will run on:
 
-### `npm run eject`
+http://localhost:3000
+📩 EmailJS Setup Notes
+Your EmailJS template should include these variables:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+{{full_name}}
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+{{phone}}
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+{{location}}
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+{{ice_type}}
 
-## Learn More
+{{quantity}}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+{{message}}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+💬 WhatsApp Ordering
+WhatsApp link is configured in:
 
-### Code Splitting
+src/config/contact.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Example:
 
-### Analyzing the Bundle Size
+export const WHATSAPP_NUMBER = "2348100032611";
+export const WHATSAPP_TEXT = "Hi Kool Link! I want to order ice blocks...";
+export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_TEXT)}`;
+📦 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+You can deploy easily on:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Vercel
 
-### Advanced Configuration
+Netlify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+GitHub Pages
 
-### Deployment
+👤 Author
+Built by Emmanuel (Otti011)
+GitHub: https://github.com/Otti011
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# Kool_Link
-An Ice Cube Company
->>>>>>> 04deebb383b43ddc1cc6d19e0af1cec42e99003f
+---
