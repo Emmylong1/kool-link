@@ -1,15 +1,16 @@
 import { Suspense, lazy } from "react";
 import Snowfall from "react-snowfall";
 import LazyMount from "./components/LazyMount";
+import { useSmoothScroll } from "./hooks/useSmoothScroll";
 
 import HeaderHero from "./sections/HeaderHero";
 import About from "./sections/About";
+import Contact from "./sections/Contact";
 
 // Lazy-loaded sections (code-splitting)
 const WhyChooseUs = lazy(() => import("./sections/WhyChooseUs"));
 const Products = lazy(() => import("./sections/Products"));
 const Delivery = lazy(() => import("./sections/Delivery"));
-const Contact = lazy(() => import("./sections/Contact"));
 const Footer = lazy(() => import("./sections/Footer"));
 
 function SectionFallback({ label = "Loading..." }) {
@@ -29,6 +30,8 @@ function SectionFallback({ label = "Loading..." }) {
 }
 
 export default function App() {
+  useSmoothScroll();
+
   return (
     <div className="bg-background-light dark:bg-background-dark text-[#111218] font-display relative">
       {/* Snow overlay - doesn’t block interaction */}
@@ -69,11 +72,8 @@ export default function App() {
         </Suspense>
       </LazyMount>
 
-      <LazyMount minHeight={750} rootMargin="350px">
-        <Suspense fallback={<SectionFallback label="Loading Contact..." />}>
-          <Contact />
-        </Suspense>
-      </LazyMount>
+      {/* Contact: loaded eagerly for smooth scrolling to work */}
+      <Contact />
 
       <LazyMount minHeight={600} rootMargin="350px">
         <Suspense fallback={<SectionFallback label="Loading Footer..." />}>
