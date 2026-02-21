@@ -12,7 +12,7 @@ export default function HeaderHero() {
             {/* LOGO PLACEHOLDER */}
             <div className="  overflow-hidden w-50 h-10 flex items-center justify-center">
               
-                  <img src="/logoo.png" alt="Kool Link logo" className="w-full h-full object-cover" />
+                  <img src="/logooo.png" alt="Kool Link logo" className="w-full h-full object-cover" />
              
            
             </div>
