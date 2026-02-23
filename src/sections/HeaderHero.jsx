@@ -12,7 +12,7 @@ export default function HeaderHero() {
             {/* LOGO PLACEHOLDER */}
             <div className="  overflow-hidden w-50 h-10 flex items-center justify-center">
               
-                  <img src="/logoo.png" alt="Cool Flow logo" className="w-full h-full object-cover" />
+                  <img src="/logoo.png" alt="Cool Flow logo" className="w-full h-full " />
              
            
             </div>
