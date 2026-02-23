@@ -60,26 +60,29 @@ export default function HeaderHero() {
           <div className="md:hidden fixed inset-0 z-50 bg-black/40 flex flex-col" onClick={() => setMenuOpen(false)}>
             <div className="bg-white/90 w-11/12 max-w-xs h-full shadow-2xl p-6 flex flex-col gap-6 animate-slideInLeft" onClick={e => e.stopPropagation()}>
               <div className="flex items-center gap-3 mb-4">
-                <div className=" border border-primary/15 rounded-lg overflow-hidden w-10 h-10 flex items-center justify-center">
-                  <span className="text-primary font-black">KL</span>
-                </div>
-                <h1 className="text-lg font-extrabold tracking-tight text-primary">KOOL LINK</h1>
+                    <div className="  overflow-hidden w-50 h-10 flex items-center justify-center">
+              
+                  <img src="/logooo.png" alt="Kool Link logo" className="w-full h-full object-cover" />
+             
+           
+            </div>
+                {/* <h1 className="text-lg font-extrabold tracking-tight text-primary">KOOL LINK</h1> */}
               </div  >
               <div className="bg-white/90 rounded-lg p-4 border border-primary/10 shadow-lg">
-              <nav className=" flex flex-col gap-4">
-                <a className="text-base font-semibold hover:text-primary transition-colors" href="#home" onClick={() => setMenuOpen(false)}>
+              <nav className=" flex flex-col gap-4 px-3 py-2">
+                <a className="text-base font-semibold hover:text-primary transition-colors px-3 py-2 border-b border-blue-500" href="/home" onClick={() => setMenuOpen(false)}>
                   Home
                 </a>
-                <a className="text-base font-semibold hover:text-primary transition-colors" href="#about" onClick={() => setMenuOpen(false)}>
+                <a className="text-base font-semibold hover:text-primary transition-colors px-3 py-2 border-b border-blue-500" href="#about" onClick={() => setMenuOpen(false)}>
                   About Us
                 </a>
-                <a className="text-base font-semibold hover:text-primary transition-colors" href="#products" onClick={() => setMenuOpen(false)}>
+                <a className="text-base font-semibold hover:text-primary transition-colors px-3 py-2 border-b border-blue-500" href="#products" onClick={() => setMenuOpen(false)}>
                   Our Products
                 </a>
-                <a className="text-base font-semibold hover:text-primary transition-colors" href="#delivery" onClick={() => setMenuOpen(false)}>
+                <a className="text-base font-semibold hover:text-primary transition-colors px-3 py-2 border-b border-blue-500" href="#delivery" onClick={() => setMenuOpen(false)}>
                   Delivery Areas
                 </a>
-                <a className="text-base font-semibold hover:text-primary transition-colors" href="#contact" onClick={() => setMenuOpen(false)}>
+                <a className="text-base font-semibold hover:text-primary transition-colors px-3 py-2 " href="#contact" onClick={() => setMenuOpen(false)}>
                   Contact
                 </a>
               </nav>
