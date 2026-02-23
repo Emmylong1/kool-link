@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
   return (
     <section className="py-24 bg-background-light px-6">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-4 mb-16">
-        <h2 className="text-4xl font-extrabold">Why Choose Kool Link</h2>
+        <h2 className="text-4xl font-extrabold">Why Choose Cool Flow</h2>
         <p className="text-[#616889] max-w-2xl">
           Experience the standard of professional ice supply with features designed around your convenience.
         </p>

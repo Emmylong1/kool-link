@@ -95,7 +95,7 @@ export default function Contact() {
                   <span className="material-symbols-outlined text-white/60">
                     mail
                   </span>
-                  <span>orders@koollink.com</span>
+                  <span>orders@coolflow.com</span>
                 </div>
               </div>
             </div>
@@ -117,56 +117,71 @@ export default function Contact() {
           </div>
 
           <div className="lg:col-span-3 p-10">
-            <form action="#" className="grid grid-cols-1 gap-6" onSubmit={onSubmit}>
+            <form className="grid grid-cols-1 gap-6" onSubmit={onSubmit}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col gap-2">
-                  <label className="text-xs font-bold uppercase text-[#616889]">
+                  <label htmlFor="full_name" className="text-xs font-bold uppercase text-[#616889]">
                     Full Name
                   </label>
                   <input
-                    className="rounded-xl border-primary/10 focus:ring-primary focus:border-primary px-4 py-3 bg-white"
+                    id="full_name"
+                    name="full_name"
+                    className="rounded-xl border border-primary/10 focus:ring-2 focus:ring-primary focus:border-primary px-4 py-3 bg-white"
                     placeholder="John Doe"
                     type="text"
                     value={form.full_name}
                     onChange={update("full_name")}
+                    required
+                    aria-required="true"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-xs font-bold uppercase text-[#616889]">
+                  <label htmlFor="phone" className="text-xs font-bold uppercase text-[#616889]">
                     Phone Number
                   </label>
                   <input
-                    className="rounded-xl border-primary/10 focus:ring-primary focus:border-primary px-4 py-3 bg-white"
+                    id="phone"
+                    name="phone"
+                    className="rounded-xl border border-primary/10 focus:ring-2 focus:ring-primary focus:border-primary px-4 py-3 bg-white"
                     placeholder="+234..."
                     type="tel"
                     value={form.phone}
                     onChange={update("phone")}
+                    required
+                    aria-required="true"
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold uppercase text-[#616889]">
+                <label htmlFor="location" className="text-xs font-bold uppercase text-[#616889]">
                   Delivery Location
                 </label>
                 <input
-                  className="rounded-xl border-primary/10 focus:ring-primary focus:border-primary px-4 py-3 bg-white"
+                  id="location"
+                  name="location"
+                  className="rounded-xl border border-primary/10 focus:ring-2 focus:ring-primary focus:border-primary px-4 py-3 bg-white"
                   placeholder="House/Bldg Address"
                   type="text"
                   value={form.location}
                   onChange={update("location")}
+                  required
+                  aria-required="true"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col gap-2">
-                  <label className="text-xs font-bold uppercase text-[#616889]">
+                  <label htmlFor="ice_type" className="text-xs font-bold uppercase text-[#616889]">
                     Ice Type
                   </label>
                   <select
-                    className="rounded-xl border-primary/10 focus:ring-primary focus:border-primary px-4 py-3 bg-white"
+                    id="ice_type"
+                    name="ice_type"
+                    className="rounded-xl border border-primary/10 focus:ring-2 focus:ring-primary focus:border-primary px-4 py-3 bg-white"
                     value={form.ice_type}
                     onChange={update("ice_type")}
+                    aria-required="true"
                   >
                     <option>Small Block</option>
                     <option>Medium Block</option>
@@ -175,41 +190,51 @@ export default function Contact() {
                   </select>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-xs font-bold uppercase text-[#616889]">
+                  <label htmlFor="quantity" className="text-xs font-bold uppercase text-[#616889]">
                     Quantity
                   </label>
                   <input
-                    className="rounded-xl border-primary/10 focus:ring-primary focus:border-primary px-4 py-3 bg-white"
+                    id="quantity"
+                    name="quantity"
+                    className="rounded-xl border border-primary/10 focus:ring-2 focus:ring-primary focus:border-primary px-4 py-3 bg-white"
                     min={1}
                     placeholder="10"
                     type="number"
                     value={form.quantity}
                     onChange={update("quantity")}
+                    aria-required="true"
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold uppercase text-[#616889]">
+                <label htmlFor="message" className="text-xs font-bold uppercase text-[#616889]">
                   Special Message
                 </label>
                 <textarea
-                  className="rounded-xl border-primary/10 focus:ring-primary focus:border-primary px-4 py-3 bg-white"
+                  id="message"
+                  name="message"
+                  className="rounded-xl border border-primary/10 focus:ring-2 focus:ring-primary focus:border-primary px-4 py-3 bg-white"
                   placeholder="Any specific delivery instructions..."
                   rows={3}
                   value={form.message}
                   onChange={update("message")}
+                  aria-describedby="message-hint"
                 />
+                <p id="message-hint" className="text-xs text-[#616889]">Optional - any special delivery instructions</p>
               </div>
 
-              {/* Status message (added, does not remove anything) */}
+              {/* Status message with aria-live for screen readers */}
               {status.type !== "idle" && (
                 <div
+                  role="alert"
+                  aria-live="polite"
+                  aria-atomic="true"
                   className={[
                     "rounded-xl px-4 py-3 text-sm font-semibold",
-                    status.type === "success" ? "bg-green-100 text-green-700" : "",
-                    status.type === "error" ? "bg-red-100 text-red-700" : "",
-                    status.type === "sending" ? "bg-blue-100 text-blue-700" : "",
+                    status.type === "success" ? "bg-green-100 text-green-700 border border-green-300" : "",
+                    status.type === "error" ? "bg-red-100 text-red-700 border border-red-300" : "",
+                    status.type === "sending" ? "bg-blue-100 text-blue-700 border border-blue-300" : "",
                   ].join(" ")}
                 >
                   {status.text}
@@ -217,9 +242,10 @@ export default function Contact() {
               )}
 
               <button
-                className="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl shadow-primary/20 transition-all mt-4 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-primary/90 hover:shadow-xl shadow-primary/20 transition-all mt-4 disabled:opacity-60 disabled:cursor-not-allowed"
                 type="submit"
                 disabled={status.type === "sending"}
+                aria-busy={status.type === "sending"}
               >
                 {status.type === "sending" ? "Sending..." : "Submit Order"}
               </button>

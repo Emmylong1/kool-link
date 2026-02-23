@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
                        <div className="  overflow-hidden w-50 h-50 flex items-center justify-center">
               
-                  <img src="/logo.png" alt="Kool Link logo" className="w-full h-full object-cover" />
+                  <img src="/logo.png" alt="Cool Flow logo" className="w-full h-full object-cover" />
              
            
             </div>
@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
 
         <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-sm">
-          <p>© 2024 Kool Link. All rights reserved.</p>
+          <p>© 2024 Cool Flow. All rights reserved.</p>
           <div className="flex gap-8">
             <a className="hover:text-white transition-colors" href="#privacy-policy">Privacy Policy</a>
             <a className="hover:text-white transition-colors" href="#terms-of-service">Terms of Service</a>

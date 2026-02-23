@@ -12,15 +12,15 @@ export default function HeaderHero() {
             {/* LOGO PLACEHOLDER */}
             <div className="  overflow-hidden w-50 h-10 flex items-center justify-center">
               
-                  <img src="/logo.png" alt="Kool Link logo" className="w-full h-full object-cover" />
+                  <img src="/logo.png" alt="Cool Flow logo" className="w-full h-full object-cover" />
              
            
             </div>
-            {/* <h1 className="text-lg sm:text-xl font-extrabold tracking-tight text-primary">KOOL LINK</h1> */}
+            {/* <h1 className="text-lg sm:text-xl font-extrabold tracking-tight text-primary">COOL FLOW</h1> */}
           </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          <nav role="navigation" aria-label="Primary" className="hidden md:flex items-center gap-6 lg:gap-8">
             <a className="text-sm font-semibold hover:text-primary transition-colors" href="/#">
               Home
             </a>
@@ -41,7 +41,9 @@ export default function HeaderHero() {
           {/* Mobile Hamburger */}
           <button
             className="md:hidden flex items-center justify-center p-2 rounded-lg  border border-primary/10 bg-white text-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
-            aria-label="Open menu"
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
             onClick={() => setMenuOpen((v) => !v)}
           >
             <span className="material-symbols-outlined text-2xl">{menuOpen ? "close" : "menu"}</span>
@@ -58,18 +60,18 @@ export default function HeaderHero() {
         {/* Mobile Nav Drawer */}
         {menuOpen && (
           <div className="md:hidden fixed inset-0 z-50 bg-black/40 flex flex-col" onClick={() => setMenuOpen(false)}>
-            <div className="bg-white/90 w-11/12 max-w-xs h-full shadow-2xl p-6 flex flex-col gap-6 animate-slideInLeft" onClick={e => e.stopPropagation()}>
+            <div id="mobile-navigation" className="bg-white/90 w-11/12 max-w-xs h-full shadow-2xl p-6 flex flex-col gap-6 animate-slideInLeft" onClick={e => e.stopPropagation()}>
               <div className="flex items-center gap-3 mb-4">
                     <div className="  overflow-hidden w-50 h-10 flex items-center justify-center">
               
-                  <img src="/logo.png" alt="Kool Link logo" className="w-full h-full object-cover" />
+                  <img src="/logo.png" alt="Cool Flow logo" className="w-full h-full object-cover" />
              
            
             </div>
-                {/* <h1 className="text-lg font-extrabold tracking-tight text-primary">KOOL LINK</h1> */}
+                {/* <h1 className="text-lg font-extrabold tracking-tight text-primary">COOL FLOW</h1> */}
               </div  >
               <div className="bg-white/90 rounded-lg p-4 border border-primary/10 shadow-lg">
-              <nav className=" flex flex-col gap-4 px-3 py-2">
+              <nav role="navigation" aria-label="Mobile" className=" flex flex-col gap-4 px-3 py-2">
                 <a className="text-base font-semibold hover:text-primary transition-colors px-3 py-2 border-b border-blue-500" href="/home" onClick={() => setMenuOpen(false)}>
                   Home
                 </a>

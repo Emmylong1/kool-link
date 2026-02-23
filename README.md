@@ -1,6 +1,6 @@
-# Kool Link ❄️
+# Cool Flow ❄️
 
-A modern, responsive landing page for **Kool Link Iceblocks** — built with React and Tailwind CSS.  
+A modern, responsive landing page for **Cool Flow Iceblocks** — built with React and Tailwind CSS.  
 It includes an order form connected to **EmailJS** and a WhatsApp quick-order CTA for fast customer conversions.
 
 ---
@@ -82,7 +82,7 @@ src/config/contact.js
 Example:
 
 export const WHATSAPP_NUMBER = "2348100032611";
-export const WHATSAPP_TEXT = "Hi Kool Link! I want to order ice blocks...";
+export const WHATSAPP_TEXT = "Hi Cool Flow! I want to order ice blocks...";
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_TEXT)}`;
 📦 Deployment
 

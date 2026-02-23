@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import Snowfall from "react-snowfall";
 import LazyMount from "./components/LazyMount";
+import ErrorBoundary from "./components/ErrorBoundary";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
 
 import HeaderHero from "./sections/HeaderHero";
@@ -33,7 +34,8 @@ export default function App() {
   useSmoothScroll();
 
   return (
-    <div className="bg-background-light dark:bg-background-dark text-[#111218] font-display relative">
+    <ErrorBoundary>
+      <div className="bg-background-light dark:bg-background-dark text-[#111218] font-display relative">
       {/* Snow overlay - doesn’t block interaction */}
       <Snowfall
         style={{
@@ -81,5 +83,6 @@ export default function App() {
         </Suspense>
       </LazyMount>
     </div>
+    </ErrorBoundary>
   );
 }
