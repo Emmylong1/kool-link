@@ -10,12 +10,15 @@ export default function HeaderHero() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3 group cursor-pointer">
             {/* LOGO PLACEHOLDER */}
-            <div className="  overflow-hidden w-50 h-10 flex items-center justify-center">
-              
-                  <img src="/logo.png" alt="Cool Flow logo" className="w-full h-full object-cover" />
-             
-           
-            </div>
+           <div className="flex items-center gap-2">
+  <div className="h-10 w-[160px] flex items-center">
+    <img
+      src="/logo.png"
+      alt="CoolFlow logo"
+      className="h-full w-auto object-contain"
+    />
+  </div>
+</div>
             {/* <h1 className="text-lg sm:text-xl font-extrabold tracking-tight text-primary">COOL FLOW</h1> */}
           </div>
 
@@ -62,12 +65,15 @@ export default function HeaderHero() {
           <div className="md:hidden fixed inset-0 z-50 bg-black/40 flex flex-col" onClick={() => setMenuOpen(false)}>
             <div id="mobile-navigation" className="bg-white/90 w-11/12 max-w-xs h-full shadow-2xl p-6 flex flex-col gap-6 animate-slideInLeft" onClick={e => e.stopPropagation()}>
               <div className="flex items-center gap-3 mb-4">
-                    <div className="  overflow-hidden w-50 h-10 flex items-center justify-center">
-              
-                  <img src="/logo.png" alt="Cool Flow logo" className="w-full h-full object-cover" />
-             
-           
-            </div>
+            <div className="flex items-center gap-2">
+  <div className="h-10 w-[160px] flex items-center">
+    <img
+      src="/logo.png"
+      alt="CoolFlow logo"
+      className="h-full w-auto object-contain"
+    />
+  </div>
+</div>
                 {/* <h1 className="text-lg font-extrabold tracking-tight text-primary">COOL FLOW</h1> */}
               </div  >
               <div className="bg-white/90 rounded-lg p-4 border border-primary/10 shadow-lg">
