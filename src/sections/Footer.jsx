@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
                        <div className="  overflow-hidden w-50 h-50 flex items-center justify-center">
               
-                  <img src="/logooo.png" alt="Kool Link logo" className="w-full h-full object-cover" />
+                  <img src="/logo.png" alt="Kool Link logo" className="w-full h-full object-cover" />
              
            
             </div>
